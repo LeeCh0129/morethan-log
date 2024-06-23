@@ -8,6 +8,7 @@ import { queryKey } from "src/constants/queryKey"
 import { GetStaticProps } from "next"
 import { dehydrate } from "@tanstack/react-query"
 import { filterPosts } from "src/libs/utils/notion"
+import MermaidComponent from "src/routes/Detail/components/NotionRenderer/MermaidComponent"
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = filterPosts(await getPosts())
@@ -33,6 +34,7 @@ const FeedPage: NextPageWithLayout = () => {
     <>
       <MetaConfig {...meta} />
       <Feed />
+      <MermaidComponent /> {/* MermaidComponent 추가 */}
     </>
   )
 }
