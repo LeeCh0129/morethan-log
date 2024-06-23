@@ -2,7 +2,7 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "ChanHoLee",
-    image: "/avatar-white.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Frontend Developer",
     bio: "I develop everything using JS.",
     email: "cksgh5477@gmail.com",
@@ -12,8 +12,16 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `LeeCh-log`,
+      name: `Bowling-Bling`,
       href: "https://github.com/LeeCh0129/morethan-log",
+    },
+    {
+      name: "Today-Keyword",
+      href: "https://github.com/LeeCh0129/TodayKeyword.BackEnd",
+    },
+    {
+      name: "Greenie",
+      href: "https://github.com/LeeCh0129/greenie-backend",
     },
   ],
   // blog setting (required)
