@@ -6,7 +6,7 @@ const MermaidComponent = () => {
 
   return (
     <div>
-      <pre className="language-mermaid">
+      {/* <pre className="language-mermaid">
         {`
         graph TD;
           A-->B;
@@ -14,7 +14,7 @@ const MermaidComponent = () => {
           B-->D;
           C-->D;
         `}
-      </pre>
+      </pre> */}
     </div>
   )
 }
