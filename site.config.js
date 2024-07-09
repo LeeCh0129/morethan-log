@@ -13,7 +13,7 @@ const CONFIG = {
   projects: [
     {
       name: `Bowling-Bling`,
-      href: "https://github.com/LeeCh0129/morethan-log",
+      href: "https://github.com/2-Idiots/BowlingBling_FrontEnd",
     },
     {
       name: "Today-Keyword",
