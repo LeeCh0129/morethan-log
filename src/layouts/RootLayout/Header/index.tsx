@@ -1,16 +1,20 @@
 import NavBar from "./NavBar"
 import Logo from "./Logo"
 import ThemeToggle from "./ThemeToggle"
+import ReadProgressBar from "./ReadProgressBar"
 import styled from "@emotion/styled"
 import { zIndexes } from "src/styles/zIndexes"
+import useScheme from "src/hooks/useScheme"
 
 type Props = {
   fullWidth: boolean
 }
 
 const Header: React.FC<Props> = ({ fullWidth }) => {
+  const [scheme] = useScheme()
+
   return (
-    <StyledWrapper>
+    <StyledWrapper scheme={scheme}>
       <div data-full-width={fullWidth} className="container">
         <Logo />
         <div className="nav">
@@ -18,17 +22,20 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
           <NavBar />
         </div>
       </div>
+      <ReadProgressBar />
     </StyledWrapper>
   )
 }
 
 export default Header
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ scheme: string }>`
   z-index: ${zIndexes.header};
   position: sticky;
   top: 0;
-  background-color: ${({ theme }) => theme.colors.gray2};
+  backdrop-filter: blur(3px); /* 블러 효과 px 낮을수록 투명하니 설정 ㄱ */
+  background-color: ${({ scheme }) =>
+    scheme === "light" ? "rgba(255, 255, 255, 0.8)" : "rgba(24, 24, 24, 0.8)"};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
   .container {
@@ -39,7 +46,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     width: 100%;
     max-width: 1120px;
-    height: 3rem;
+    height: 4rem;
     margin: 0 auto;
     &[data-full-width="true"] {
       @media (min-width: 768px) {

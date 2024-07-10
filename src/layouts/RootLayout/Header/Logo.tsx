@@ -12,4 +12,7 @@ const Logo = () => {
 
 export default Logo
 
-const StyledWrapper = styled(Link)``
+const StyledWrapper = styled(Link)`
+  font-size: 1.5rem; /* 폰트 크기 조정 */
+  font-weight: bold; /* Bold체 적용 */
+`
