@@ -9,7 +9,15 @@ const ProgressBar = styled.div<{ width: number }>`
   height: 4px;
   width: ${({ width }) => width}%;
   // #885a1c #ff6347 #fec021
-  background-color: #fec021;
+  /* background-color: #fec021; */
+  /* background: linear-gradient(to right, white, gray 50vw, black 100vw); */
+  /* background: linear-gradient(90deg, #00C9FF 10%, #92FE9D 90%); */
+  background: linear-gradient(
+    to right,
+    rgba(130, 60, 180, 1) 0%,
+    rgba(250, 30, 30, 1) 50vw,
+    rgba(250, 180, 70, 1) 100vw
+  );
   z-index: ${zIndexes.header};
   transition: width 0.2s ease-out; /* 트랜지션 추가 */
 `
